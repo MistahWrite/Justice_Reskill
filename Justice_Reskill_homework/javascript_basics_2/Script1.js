@@ -32,10 +32,6 @@ function divideNums(num1, num2) {
     return result;
 }
 
-//Tipping Calculator
-function TippingCalculator(money, percent) {
-    return money * 1 + money * percent;
-}
 console.log("param1: " + param1);
 console.log("param2: " + param2);
 
