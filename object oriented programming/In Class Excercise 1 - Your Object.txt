@@ -1,0 +1,14 @@
+
+let yourName = {
+    name : "Chad Jay Harrington",
+    age : 33,
+    alive : true,
+    homeTown : "Coon Rapids, MN",
+    currentLocation : "Ziggi's Coffee Shop"
+}
+console.log(yourName.name);
+console.log(yourName.age);
+console.log(yourName.alive);
+console.log(yourName.homeTown);
+console.log(yourName.currentLocation);
+yourName.age = 34;

@@ -1,0 +1,48 @@
+var employee = {
+    id: 467239,
+    name: "Megan Cain",
+    team: 4,
+    payTier: 7
+}
+How many property/value pairs does the employee object have?  4
+What value is associated with the property of payTier? 7
+What is the property name, or label, for the value "Megan Cain"? name
+Write your own object assigned to a variable named friend. The friend should have a name property and an appropriate value.
+var friend = {
+    name : "Chad Harrington"
+}
+Write another object assigned to a variable named artist. The artist should have at least three properties.
+var artist = {
+    name : "Mistah Write",
+    topTenHits : 3,
+    songs : 2041,
+    latestSong : "I Can't Care"
+}
+
+Write the syntax that will access the value 4: employee.team;
+Write the syntax that will access the value "Megan Cain": employee.name;
+What will happen if you call employee.age? Why? undefined, because that value hasn't been assigned
+
+var student = {
+    name: "Francy",
+    program: "Front End",
+    module: 5,
+    alum: true
+}
+Write the syntax that will access the value "Front End": student.program;
+Write the syntax that will access the value true: student.alum;
+What will happen if you call francy.module? Why? francy.module returns 5. if you call it then it probably comes up with an error.
+
+var student = {
+    name : "Tristan",
+    program : "Front End",
+    module : 1,
+    alum: false
+}
+
+Write the syntax that will move Tristan to Module 2: student.module = 2;
+Write the syntax that will move Tristan to Module 5: student.module = 5;
+Write the syntax that will make Tristan an alum: student.alum = true;
+What will happen if you run tristan.module = 3? Why? undefined because the object name is student not tristan so it will come up with an error since JavaScript wouldn't recognize it that way yet.
+
+

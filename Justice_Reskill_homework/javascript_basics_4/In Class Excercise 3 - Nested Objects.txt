@@ -1,0 +1,47 @@
+var student = {
+  name : "Aaron",
+  program : "Front End",
+  module : 5,
+  alum : false,
+  allergies : ['nuts', 'fish'],
+  projects : {
+    dogParty : "n/a",
+    intentionTimer : null,
+    checkYoSelf : null
+  }
+}
+
+Write the syntax that would access the notes from Maddy’s Dog Party: student.projects.dogParty;
+Write the syntax that would access the notes from Maddy’s Intention Timer: student.projects.intentionTimer;
+Write the syntax that will give Maddy a note of “Great Job!” for Check Yo Self: student.projects.checkYoSelf = "Great Job!";
+Why do you think the value of the intentionTimer property is assigned to null in the original object? Probably because there is no notes saved about the project.
+
+var student = {
+  name : "Rebecca",
+  program : "Front End",
+  module : 1,
+  alum : false,
+  proejcts: ["Dog Party", "Number Guesser", "Check Yo Self"]
+}
+Write a function that console.logs a sentence following this format: [name] is an awesome [program] student! They have built the following projects: [project1], [project2], and [project3]. This function should be dynamic enough so that when Rebecca (in this case) adds another project to her list, the function would return an appropriate end of the sentence (i.e. [project1], [project2], [project3], and [project4]).
+
+var student = {
+  name : "Rebecca",
+  program : "Front End",
+  module : 1,
+  alum : false,
+  projects: ["Dog Party", "Number Guesser", "Check Yo Self", "Another One"]
+}
+
+function SentenceOutput() {
+  var projects = '';
+  for (var i = 0; i < student.projects.length; i++) {
+    if (i > 0) projects += ", ";
+    if (i == student.projects.length-1) projects += "and ";
+    projects += student.projects[i];
+  }
+  projects += ".";
+
+  console.log(student.name + " is an awesome " + student.program + " student.  They have built the following projects: " + projects);
+}
+SentenceOutput();
