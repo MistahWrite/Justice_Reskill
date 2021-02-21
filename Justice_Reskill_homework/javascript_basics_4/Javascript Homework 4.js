@@ -1192,24 +1192,24 @@ console.log("a. " + json.currentItemCount);
 for (var key in json.items) {
     if(json.items[key].kind === "shopping#product") {
         count += 1;
-        console.log("a. Key: " + key + " matches shopping#product");
-        console.log("a. Count: " + count);
-        console.log(json.items[key].product.title);
-        console.log("b. " + json.items[key].product.inventories[0].availability);
+        console.log(count + "a. Key: " + key + " matches shopping#product");
+        console.log(count + "a. Count: " + count);
+        console.log(count + "a. Title: " + json.items[key].product.title);
+        console.log(count + "b. Availability: " + json.items[key].product.inventories[0].availability);
         
         var count_2 = 0;
         for(var images in json.items[key].product.images) {
             count_2 += 1;
         }
-        if (count_2 >= 2) console.log("c. HAS MORE THAN ONE IMG: " + json.items[key].product.title);
+        if (count_2 >= 2) console.log(count + "c. HAS MORE THAN ONE IMG: " + json.items[key].product.title);
         if(json.items[key].product.brand == "Canon") {
-            console.log("d. Brand: " + json.items[key].product.brand);
+            console.log(count + "d. Brand: " + json.items[key].product.brand);
             if(json.items[key].product.link.includes("ebay")) {
-                console.log("e. From eBay");
+                console.log(count + "e. From eBay");
             }
         }
-        console.log("f. Price: $" + json.items[key].product.inventories[0].price);
-        console.log("f. Images: " + json.items[key].product.images[0].link);
+        console.log(count + "f. Price: $" + json.items[key].product.inventories[0].price);
+        console.log(count + "f. Images: " + json.items[key].product.images[0].link);
     }
 }
 
