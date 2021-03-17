@@ -8,6 +8,16 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <link href="style.css" rel="stylesheet">
+
+    <script src="script.js" type="text/javascript"></script>
+
+    <style>
+        label {
+            font-size : 1.2em;
+            font-style: oblique;
+        }
+    </style>
     </head>
     <body>
         <div class="container">
@@ -38,59 +48,108 @@
                         <li class="nav-item">
                             <a class="nav-link" href="Contact.html">Contact</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-                        </li>
                     </ul>
                 </div>
-                <div class="col-md-9">
+                <div class="col-md-4">
                     <form>
-                        <div class="form-row">
-                          <div class="form-group col-md-6">
-                            <label for="inputEmail4">Email</label>
-                            <input type="email" class="form-control" id="inputEmail4">
-                          </div>
-                          <div class="form-group col-md-6">
-                            <label for="inputPassword4">Name</label>
-                            <input type="text" class="form-control" id="inputName">
-                          </div>
+                        <div class="form-group">
+                            <label for="inputFirstName">First Name</label>
+                            <input type="text" class="form-control" id="inputFirstName">
                         </div>
                         <div class="form-group">
-                          <label for="inputAddress">Address</label>
-                          <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+                            <label for="inputLastName">Last Name</label>
+                            <input type="text" class="form-control" id="inputLastName">
                         </div>
                         <div class="form-group">
-                          <label for="inputAddress2">Address 2</label>
-                          <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
-                        </div>
-                        <div class="form-row">
-                          <div class="form-group col-md-6">
-                            <label for="inputCity">City</label>
-                            <input type="text" class="form-control" id="inputCity">
-                          </div>
-                          <div class="form-group col-md-4">
-                            <label for="inputState">State</label>
-                            <input type="text" id="inputState" class="form-control">
-                          </div>
-                          <div class="form-group col-md-2">
-                            <label for="inputZip">Zip</label>
-                            <input type="text" class="form-control" id="inputZip">
-                          </div>
-                        </div>
-                        <div class="formgroup col-md-2">
-                            <label for"message">Message</label>
-                            <textarea class="form-control" id="message" cols="25" rows="10"></textarea>
+                            <label for="inputEmail">Email</label>
+                            <input type="email" class="form-control" id="inputEmail">
                         </div>
                         <div class="form-group">
-                          <div class="form-check">
-                            <input class="form-check-input" type="checkbox" id="gridCheck">
-                            <label class="form-check-label" for="gridCheck">
-                              Check me out
-                            </label>
-                          </div>
+                            <label for="inputPhoneNumber">Phone Number</label>
+                            <input type="text" class="form-control" id="inputPhoneNumber">
                         </div>
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <div class="form-group">
+                            <label for="inputAge">Age</label>
+                            <input type="text" class="form-control" id="inputAge">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputSecretAnswer">Secret Answer</label>
+                            <input type="text" class="form-control" id="inputSecretAnswer">
+                        </div>
+                       <div class="formgroup">
+                            <label for="message">Message</label>
+                            <textarea class="form-control" id="inputMessage" cols="25" rows="10"></textarea>
+                        </div>
+                        <div claass="formgroup">
+                            <label for="preferredContactMethod">Preferred Contact Method</label>
+                                <input type="radio" value="emailContact" name="input_radio_group_preferred"><label>Email</label></input>
+                                <input type="radio" value="phoneContact" name="input_radio_group_preferred"><label>Phone</label></input>
+                                <input type="radio" value="noContact" name="input_radio_group_preferred"><label>No Contact</label></input>
+                        </div>
+                        <div claass="formgroup">
+                            <label for="income">Income</label>
+                            <select id="inputIncome" name="income" class="form-control">
+                                <option>$0-$35,000</option>
+                                <option>$35,000-$74,999</option>
+                                <option>$75,000-$99,999</option>
+                                <option>$100,000 and more</option>
+                            </select>
+                        </div>
+                        <div claass="formgroup">
+                            <input type="checkbox" id="inputCorrect" name="correct"><label for="income">Check to confirm your information is correct</label>
+                        </div>
+                        <input type="button" class="btn btn-primary" value="Submit" onclick="processForm();" />
                       </form>
+                </div>
+                <div class="col-md-4">
+                    <form>
+                        <div class="form-group">
+                            <label for="inputFirstName">First Name</label>
+                            <input type="text" class="form-control" id="outputFirstName">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputLastName">Last Name</label>
+                            <input type="text" class="form-control" id="outputLastName">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputEmail">Email</label>
+                            <input type="email" class="form-control" id="outputEmail">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputPhoneNumber">Phone Number</label>
+                            <input type="text" class="form-control" id="outputPhoneNumber">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputAge">Age</label>
+                            <input type="text" class="form-control" id="outputAge">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputSecretAnswer">Secret Answer</label>
+                            <input type="text" class="form-control" id="outputSecretAnswer">
+                        </div>
+                       <div class="formgroup">
+                            <label for="message">Message</label>
+                            <textarea class="form-control" id="outputMessage" cols="25" rows="10"></textarea>
+                        </div>
+                        <div claass="formgroup">
+                            <label for="preferredContactMethod">Preferred Contact Method</label>
+                                <input type="radio" value="emailContact" id="output_radio_email" name="output_radio_group_preferred"><label>Email</label></input>
+                                <input type="radio" value="phoneContact" id="output_radio_phone" name="output_radio_group_preferred"><label>Phone</label></input>
+                                <input type="radio" value="noContact" id="output_radio_no_contect" name="output_radio_group_preferred"><label>No Contact</label></input>
+                        </div>
+                        <div claass="formgroup">
+                            <label for="income">Income</label>
+                            <select id="outputIncome" name="income" class="form-control">
+                                <option>$0-$35,000</option>
+                                <option>$35,000-$74,999</option>
+                                <option>$75,000-$99,999</option>
+                                <option>$100,000 and more</option>
+                            </select>
+                        </div>
+                        <div claass="formgroup">
+                            <input type="checkbox" id="outputCorrect" name="correct"><label for="income">Check to confirm your information is correct</label>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
