@@ -12,7 +12,7 @@ function processForm() {
     let message = document.getElementById("inputMessage").value;
     var preferredContactMethod = document.querySelector('input[name="input_radio_group_preferred"]:checked');
     let income = document.getElementById("inputIncome").value;
-    let correct = document.querySelector('input[name="inputCorrect"]:checked');;
+    let correct = document.querySelector('input[name="inputCorrect"]:checked');
 
     console.log(firstName); 
     console.log(lastName);
