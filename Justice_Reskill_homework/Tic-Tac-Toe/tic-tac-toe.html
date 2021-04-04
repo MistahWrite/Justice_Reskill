@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+
+    </head>
+    <body>
+        <div class="container">
+            <h1>Tic-Tac-Toe Game</h1>
+            <form>
+              
+                <div class="form-group">
+                    <button type="button" class="btn btn-success" id="1,1">
+                        _
+                    </button>
+                    <button type="button" class="btn btn-success" id="1,2">
+                        _
+                    </button>
+                    <button type="button" class="btn btn-success" id="1,3">
+                        _
+                    </button>
+<br/>
+                    <button type="button" class="btn btn-success" id="2,1">
+                        _
+                    </button>
+                    <button type="button" class="btn btn-success" id="2,2">
+                        _
+                    </button>
+                    <button type="button" class="btn btn-success" id="2,3">
+                        _
+                    </button>
+<br/>
+                    <button type="button" class="btn btn-success" id="3,1">
+                        _
+                    </button>
+                    <button type="button" class="btn btn-success" id="3,2">
+                        _
+                    </button>
+                    <button type="button" class="btn btn-success" id="3,3">
+                        _
+                    </button>
+                </div>
+            </form>
+        </div>
+    </body>
+        
+        <script type="text/javascript">
+var round = 0;
+var matrix = [  ["_","_","_"],
+                ["_","_","_"],
+                ["_","_","_"]  ];
+                
+function console_log_matrix() {
+    var matrixString = "";
+                    
+    for(var i = 0; i < 3; i++) {
+        for(var j = 0; j < 3; j++) {        
+            console.log("matrix[" + i +"]" + "[" + j + "] = " + matrix[i][j]);
+        }
+    }
+    for(var i = 0; i < 3; i++) {
+        for(var j = 0; j < 3; j++) {
+            matrixString += matrix[i][j];
+        }
+        matrixString += "\r\n";
+    }
+    console.log(matrixString);
+}
+function place_an_X(pt, x, y) {
+    pt.innerHTML = "X";
+    matrix[x][y] = "X";
+    console_log_matrix();
+}
+function place_an_O(pt, x, y) {
+    pt.innerHTML = "O";
+    matrix[x][y] = "O";
+    console_log_matrix();
+}
+
+function checkForLetter(combo) {
+    var num = 0;
+    var combo1;
+    var combo2;
+    var combo3;
+    for(var i = 0; i < 3; i++) {
+        for(var j = 0; j < 3; j++) {
+
+            if(combo[0] == num) {
+                combo1 = matrix[i][j];
+            } else if (combo[1] == num) {
+                combo2 = matrix[i][j];
+            } else if  (combo[2] == num) {
+                combo3 = matrix[i][j];
+            } 
+            num += 1;
+        }
+    }
+    if (combo1 != "_" && combo1 == combo2 && combo2 == combo3) {
+        return true;
+    } else {
+        return false;
+    }
+
+}
+var winningCombos = [[0,1,2],
+                    [3,4,5],
+                    [6,7,8],
+                    [0,3,6],
+                    [1,4,7],
+                    [2,5,8],
+                    [0,4,8],
+                    [6,4,2]];
+
+function check_for_winner() {
+    for(i = 0; i < winningCombos.length; i++) {
+        if(checkForLetter(winningCombos[i])) {
+            alert("We Have a Winner!");
+        }
+    }
+}
+
+function choose(pt, x, y) {
+    if(round % 2) {
+        place_an_X(pt,x-1,y-1);
+    } else {
+        place_an_O(pt,x-1,y-1);
+    }
+    round += 1;
+    
+    console.log("round " + round);
+    if (round == 9) {
+        alert("Game Is Over and Was a Tie!");
+    }
+    check_for_winner();
+}
+
+function choose1_1() {
+    choose(pt1_1, 1,1);
+}    
+function choose1_2() {
+    choose(pt1_2, 1,2);
+}
+function choose1_3() {
+    choose(pt1_3, 1,3);
+}
+
+function choose2_1() {
+    choose(pt2_1, 2,1);
+}
+function choose2_2() {
+    choose(pt2_2, 2,2);
+}
+function choose2_3() {
+    choose(pt2_3, 2,3);
+}
+
+function choose3_1() {
+    choose(pt3_1, 3,1);
+}
+function choose3_2() {
+    choose(pt3_2, 3,2);
+}
+function choose3_3() {
+    choose(pt3_3, 3,3);
+}
+
+var pt1_1 = document.getElementById("1,1");
+var pt1_2 = document.getElementById("1,2");
+var pt1_3 = document.getElementById("1,3");
+
+var pt2_1 = document.getElementById("2,1");
+var pt2_2 = document.getElementById("2,2");
+var pt2_3 = document.getElementById("2,3");
+
+var pt3_1 = document.getElementById("3,1");
+var pt3_2 = document.getElementById("3,2");
+var pt3_3 = document.getElementById("3,3");
+
+pt1_1.addEventListener("click", choose1_1);
+pt1_2.addEventListener("click", choose1_2);
+pt1_3.addEventListener("click", choose1_3);
+pt2_1.addEventListener("click", choose2_1);
+pt2_2.addEventListener("click", choose2_2);
+pt2_3.addEventListener("click", choose2_3);
+pt3_1.addEventListener("click", choose3_1);
+pt3_2.addEventListener("click", choose3_2);
+pt3_3.addEventListener("click", choose3_3);
+
+</script>
+</html>

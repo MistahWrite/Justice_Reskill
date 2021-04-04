@@ -1,0 +1,8 @@
+function formatDate(date){
+    var month=["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+    var dateNew = new Date(date);
+
+    return month[dateNew.getMonth()] + " " + dateNew.getDate() + ", " + dateNew.getFullYear();
+}
+
+console.log(formatDate("11/21/2015"));
